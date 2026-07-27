@@ -1,0 +1,290 @@
+/* --- Cores baseadas estritamente na Logo do Programação Paraná --- */
+:root {
+    --bg-main: #0b0f19;          /* Fundo escuro profundo */
+    --card-bg: #151c2c;          /* Card em tom azul-grafite escuro */
+    --card-border: #232d42;      /* Bordas suaves */
+    
+    --brand-blue: #0073b7;       /* Azul primário extraído da logo */
+    --brand-blue-light: #0091e6;
+    --brand-green: #2ecc71;      /* Verde extraído da logo */
+    --brand-green-dark: #27ae60;
+    
+    --text-white: #f8fafc;
+    --text-muted: #94a3b8;
+    --font-family: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-white);
+    font-family: var(--font-family);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Navbar --- */
+.navbar {
+    background-color: rgba(21, 28, 44, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--card-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 1rem 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-img {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+}
+
+.btn-presenca-nav {
+    background-color: transparent;
+    color: var(--brand-green);
+    border: 1px solid var(--brand-green);
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-presenca-nav:hover {
+    background-color: var(--brand-green);
+    color: #000;
+}
+
+/* --- Hero --- */
+.hero {
+    padding: 3rem 0 2rem 0;
+    border-bottom: 1px solid var(--card-border);
+    background: radial-gradient(circle at top right, rgba(0, 115, 183, 0.15), transparent 50%);
+}
+
+.badge {
+    background: rgba(46, 204, 113, 0.15);
+    color: var(--brand-green);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    margin: 1rem 0 0.5rem 0;
+    font-weight: 900;
+}
+
+.hero p {
+    color: var(--text-muted);
+    max-width: 700px;
+    font-size: 1.05rem;
+}
+
+/* --- Main Layout --- */
+.main-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2.5rem 0;
+}
+
+@media (min-width: 900px) {
+    .main-layout {
+        grid-template-columns: 2.2fr 1fr; /* Coluna do vídeo maior que a lateral */
+    }
+}
+
+.card-section {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.section-header {
+    margin-bottom: 1rem;
+}
+
+.section-header h2 {
+    font-size: 1.3rem;
+    color: var(--text-white);
+    margin-bottom: 0.2rem;
+}
+
+.section-header p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* --- Responsividade dos Vídeos --- */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* --- Caixa de Destaque da Presença --- */
+.presenca-box {
+    background: linear-gradient(135deg, rgba(0, 115, 183, 0.2) 0%, rgba(46, 204, 113, 0.1) 100%);
+    border: 1px solid var(--brand-blue);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.presenca-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.presenca-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+}
+
+.presenca-box h2 {
+    font-size: 1.3rem;
+    color: var(--text-white);
+}
+
+.presenca-box p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.btn-presenca-main {
+    display: block;
+    text-align: center;
+    background: linear-gradient(90deg, var(--brand-green) 0%, var(--brand-green-dark) 100%);
+    color: #000;
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 0.9rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-presenca-main:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(46, 204, 113, 0.3);
+}
+
+/* --- Perfil do Instrutor --- */
+.instructor-card {
+    text-align: center;
+    position: sticky;
+    top: 90px;
+}
+
+.avatar-wrapper {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1rem auto;
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));
+}
+
+.instructor-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.instructor-tag {
+    color: var(--brand-blue-light);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.instructor-name {
+    font-size: 1.4rem;
+    margin: 0.2rem 0 0.8rem 0;
+}
+
+.instructor-bio {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid var(--card-border);
+    margin: 1.2rem 0;
+}
+
+.instructor-details {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.detail-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.detail-value {
+    font-size: 0.88rem;
+    color: var(--text-white);
+    font-weight: 600;
+}
+
+/* --- Rodapé --- */
+footer {
+    border-top: 1px solid var(--card-border);
+    padding: 2rem 0;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.footer-sub {
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+    opacity: 0.6;
+}
