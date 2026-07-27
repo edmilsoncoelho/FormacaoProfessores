@@ -51,7 +51,7 @@ body {
 }
 
 .logo-img {
-    height: 48px;
+    height: 60px;
     width: auto;
     object-fit: contain;
 }
@@ -85,7 +85,7 @@ body {
     color: var(--brand-green);
     padding: 4px 12px;
     border-radius: 20px;
-    font-size: 0.85rem;
+    font-size: 1.35rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -287,4 +287,31 @@ footer {
     font-size: 0.8rem;
     margin-top: 0.3rem;
     opacity: 0.6;
+}
+
+/* --- Estilo do Título Bicolor da Navbar --- */
+.logo-title {
+    font-size: 2.3rem;        /* Tamanho do texto */
+    font-weight: 900;         /* Deixa a fonte bem encorpada */
+    letter-spacing: 4px;      /* Espaçamento elegante entre as letras */
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* Cor Verde (baseada na logo) */
+.logo-title .txt-verde {
+    color: var(--brand-green); /* Se preferir fixo sem variável, use #2ECC71 */
+}
+
+/* Cor Azul (baseada na logo) */
+.logo-title .txt-azul {
+    color: var(--brand-blue-light); /* Se preferir fixo sem variável, use #0091E6 */
+}
+
+/* Ajuste sutil para o título não encavalar no celular */
+@media (max-width: 768px) {
+    .logo-title {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
 }
